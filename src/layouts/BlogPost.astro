@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-
+import Comments from "src/components/Comments";
 import BaseLayout from "./Base.astro";
 import BlogHero from "@/components/blog/Hero";
 
@@ -67,7 +67,9 @@ const { headings } = await post.render();
 			>
 				<slot />
 			</div>
+			<slot />
 		</article>
+		<Comments client:idle />
 	</div>
 	<button
 		id="to-top-btn"
